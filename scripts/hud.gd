@@ -42,6 +42,7 @@ func start_speedrun():
 
 func _on_coin_collected(coins):
 	get_tree().call_group("Door", "coin_amount_updated",coins)
+	get_tree().call_group("Mover", "coin_amount_updated",coins)
 	coins_label.text = str(coins)
 
 func _on_player_reached_goal() -> void:

@@ -2,7 +2,7 @@
 extends Path3D
 @onready var path_follow_3d: PathFollow3D = $PathFollow3D
 @onready var remote_transform_3d: RemoteTransform3D = $PathFollow3D/RemoteTransform3D
-
+@export var move_with_coins : int = 0
 @export var object_to_move : Node
 @export var movement_speed : float = 1.0
 @export var is_on_from_start : bool = true
@@ -39,6 +39,14 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint() and global_position != Vector3.ZERO:
 		global_position = Vector3.ZERO
 
+func coin_amount_updated(coins_amount) -> void:
+	print("worked 1")
+	if move_with_coins > 0:
+		if coins_amount >= move_with_coins:
+			is_on_from_start = true
+			print("worked")
+	#if on and look_at_object_when_activated:
+		#get_tree().call_group("View", "look_at_target",object_to_move)
 
 func receive_input(on : bool) -> void:
 	is_on_from_start = on

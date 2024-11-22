@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/moving_object_path_3d.gd" id="1_xasjo"]
 
-[node name="moving_object_path" type="Path3D"]
+[node name="moving_object_path" type="Path3D" groups=["Mover"]]
 script = ExtResource("1_xasjo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
