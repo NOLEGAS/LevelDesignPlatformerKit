@@ -1,12 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbr3dh46cbskt"]
+[gd_scene load_steps=3 format=3 uid="uid://dbr3dh46cbskt"]
 
 [ext_resource type="PackedScene" uid="uid://2briludp3y6q" path="res://models/prototyping/models/wall.glb" id="1_jc8pj"]
-[ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_fs418"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj181"]
-albedo_texture = ExtResource("2_fs418")
-metallic_specular = 0.0
-uv1_offset = Vector3(1.24, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eauqk"]
 size = Vector3(0.25, 1, 1)
@@ -14,9 +8,6 @@ size = Vector3(0.25, 1, 1)
 [node name="wall" type="Node3D"]
 
 [node name="wall2" parent="." instance=ExtResource("1_jc8pj")]
-
-[node name="wall" parent="wall2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_nj181")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
