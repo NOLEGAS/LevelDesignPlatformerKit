@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lgiuakdfais5"]
+[gd_scene load_steps=34 format=3 uid="uid://lgiuakdfais5"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6ehmu"]
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="1_sywyl"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="16_8a7db"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="17_553xf"]
 [ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="18_wjdvs"]
+[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="18_ycbs4"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="19_oq2v8"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="20_xr0yc"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="21_ndcox"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="23_e7utc"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="23_yipbg"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="24_ifghr"]
+[ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="25_y0fq5"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -45,6 +47,13 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_xkxao"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 2, 40, 0, 0, 0, 0, 0, 0, 0, 2, 50),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_xcta8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.5, 5.5, 76, 0, 0, 0, 0, 0, 0, -4.429, 5.5, 83.071),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -152,6 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 36)
 [node name="moving_object_path3" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
 curve = SubResource("Curve3D_xkxao")
 object_to_move = NodePath("../platform-moving3")
+movement_speed = 2.0
 is_on_from_start = false
 ping_pong = true
 
@@ -178,19 +188,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 58)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 58)
 
 [node name="coin3" parent="World" instance=ExtResource("17_553xf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4.5, 71)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4.5, 69)
 
 [node name="platform-falling3" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, 61)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7, 2.5, 61)
 
 [node name="platform-falling4" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, 64)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -9, 3, 63)
 
 [node name="platform-falling5" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3.5, 67)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -10.5, 3.5, 65.5)
 
 [node name="platform-medium" parent="World" instance=ExtResource("23_e7utc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4, 71)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4, 69)
 
 [node name="trap-spikes" parent="World" instance=ExtResource("18_wjdvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 18)
@@ -208,6 +218,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 18)
 
 [node name="platform5" parent="World" instance=ExtResource("13_t1cyx")]
+
+[node name="flag" parent="World" instance=ExtResource("18_ycbs4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 70)
+
+[node name="platform-medium2" parent="World" instance=ExtResource("23_e7utc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4.5, 73)
+
+[node name="platform-large2" parent="World" instance=ExtResource("5_qprvo")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -10, 5, 78)
+
+[node name="platform-large3" parent="World" instance=ExtResource("5_qprvo")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -6.46447, 5, 81.5355)
+
+[node name="moving_object_path4" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
+curve = SubResource("Curve3D_xcta8")
+object_to_move = NodePath("../spike-block-wide")
+movement_speed = 2.0
+ping_pong = true
+
+[node name="spike-block-wide" parent="World" instance=ExtResource("25_y0fq5")]
+transform = Transform3D(1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, -11.5, 5.5, 76)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
