@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpiclf1lo4yl4"]
+
+[ext_resource type="Script" path="res://objects/platform_toggle_controller.gd" id="1_n5yij"]
+
+[node name="PlatformToggleController" type="Node3D"]
+script = ExtResource("1_n5yij")
