@@ -100,6 +100,7 @@ current = true
 fov = 40.0
 
 [node name="PlatformToggleController" parent="." instance=ExtResource("4_w526i")]
+timerTrigger = true
 
 [node name="World" type="Node3D" parent="."]
 
@@ -244,9 +245,25 @@ ping_pong = true
 [node name="spike-block-wide" parent="World" instance=ExtResource("25_y0fq5")]
 transform = Transform3D(1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, -11.5, 5.5, 76)
 
+[node name="platform-grass-large-round4" parent="World" instance=ExtResource("16_8a7db")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 83)
+
+[node name="platform-falling6" parent="World" instance=ExtResource("15_lq6tn")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -3.87868, 5.5, 86.1213)
+
+[node name="platform-falling7" parent="World" instance=ExtResource("15_lq6tn")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.532614, 5.5, 87.5355)
+
 [node name="button3" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50493, 0.5, 1.2045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 83)
 target = NodePath("../../PlatformToggleController")
+
+[node name="platform_toggle" parent="World" instance=ExtResource("27_tf6da")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, 82)
+
+[node name="platform_toggle2" parent="World" instance=ExtResource("27_tf6da")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, 84)
+isGreen = true
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -363,13 +380,6 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="platform_toggle" parent="." instance=ExtResource("27_tf6da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48857, 0, 1.6716)
-isGreen = true
-
-[node name="platform_toggle2" parent="." instance=ExtResource("27_tf6da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84966, 0, 5.4039)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

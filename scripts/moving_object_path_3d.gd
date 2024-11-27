@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 		global_position = Vector3.ZERO
 
 func coin_amount_updated(coins_amount) -> void:
-	print("worked 1")
 	if move_with_coins > 0:
 		if coins_amount >= move_with_coins:
 			is_on_from_start = true

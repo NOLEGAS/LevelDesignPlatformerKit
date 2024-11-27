@@ -5,13 +5,15 @@ extends Node3D
 @export var colorRed : Material
 @onready var platform_2: MeshInstance3D = $platform2
 
+@onready var collision: CollisionShape3D = $StaticBody3D/CollisionShape3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
 	if isGreen:
 		platform_2.set_surface_override_material(0,colorGreen)
 		#Green platforms start turned on
 		visible = false
+		collision.disabled = true
 	else:
 		platform_2.set_surface_override_material(0,colorRed)
 
@@ -24,5 +26,8 @@ func toggleState(isGreenOn : bool) -> void:
 	print(isGreenOn)
 	if((isGreen and isGreenOn) or (not isGreen and not isGreenOn)):
 		visible = true
+		collision.set_deferred("disabled", false)
+		
 	else:
 		visible = false
+		collision.set_deferred("disabled", true)
