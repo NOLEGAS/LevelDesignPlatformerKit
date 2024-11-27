@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ytqajrdi7fqj"]
 
-[ext_resource type="Script" path="res://objects/trampoline.gd" id="1_73nxn"]
+[ext_resource type="Script" path="res://scripts/trampoline.gd" id="1_73nxn"]
 [ext_resource type="AudioStream" uid="uid://c74thugcgcetg" path="res://sounds/trampoline_bounce.mp3" id="3_0nmjc"]
 [ext_resource type="PackedScene" uid="uid://1hx4wcwosemd" path="res://models/props/block-moving-large.glb" id="3_lbpl7"]
 

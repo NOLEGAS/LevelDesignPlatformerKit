@@ -55,7 +55,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_xcta8"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.5, 5.5, 76, 0, 0, 0, 0, 0, 0, -4.429, 5.5, 83.071),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.4142, 5.5, 76.5858, 0, 0, 0, 0, 0, 0, -5.05025, 5.5, 82.9497),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -243,7 +243,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="spike-block-wide" parent="World" instance=ExtResource("25_y0fq5")]
-transform = Transform3D(1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, -11.5, 5.5, 76)
+transform = Transform3D(1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, -14.6641, 7.10589, 81.0938)
 
 [node name="platform-grass-large-round4" parent="World" instance=ExtResource("16_8a7db")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 83)
@@ -259,11 +259,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 83)
 target = NodePath("../../PlatformToggleController")
 
 [node name="platform_toggle" parent="World" instance=ExtResource("27_tf6da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, 82)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3.63397, 6, 80.634)
 
 [node name="platform_toggle2" parent="World" instance=ExtResource("27_tf6da")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, 84)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 4.63397, 6, 82.366)
 isGreen = true
+
+[node name="platform_toggle3" parent="World" instance=ExtResource("27_tf6da")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 5.36603, 6, 79.634)
+isGreen = true
+
+[node name="platform_toggle4" parent="World" instance=ExtResource("27_tf6da")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 6.36603, 6, 81.366)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)

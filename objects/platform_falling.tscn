@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://c8up71en5djgm"]
 
 [ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_gkggt"]
-[ext_resource type="Script" path="res://objects/platform_falling.gd" id="2_6ganw"]
+[ext_resource type="Script" path="res://scripts/platform_falling.gd" id="2_6ganw"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="3_uuuje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t551e"]
