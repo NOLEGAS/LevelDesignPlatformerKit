@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpiclf1lo4yl4"]
+[gd_scene load_steps=4 format=3 uid="uid://cpiclf1lo4yl4"]
 
 [ext_resource type="Script" path="res://scripts/platform_toggle_controller.gd" id="1_n5yij"]
 [ext_resource type="AudioStream" uid="uid://dlyg501xr8ato" path="res://sounds/countdown-click.mp3" id="2_3fk7w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7r25"]
+size = Vector3(30, 10, 30)
 
 [node name="PlatformToggleController" type="Node3D"]
 script = ExtResource("1_n5yij")
@@ -13,4 +16,14 @@ autostart = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3fk7w")
 
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74164, 0, 0)
+shape = SubResource("BoxShape3D_l7r25")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

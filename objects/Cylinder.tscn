@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://do8wmvpaa50hc"]
+[gd_scene load_steps=3 format=3 uid="uid://4ak0p4f2q62d"]
 
-[ext_resource type="PackedScene" uid="uid://c506v386kacfh" path="res://models/prototyping/models/shape-cylinder-detailed.glb" id="1_7uplt"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2p6hg"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_t5t7s"]
-height = 1.0
+[sub_resource type="CylinderMesh" id="CylinderMesh_8beii"]
 
-[node name="shape-cylinder-detailed2" instance=ExtResource("1_7uplt")]
+[node name="Cylinder" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_t5t7s")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_2p6hg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CylinderMesh_8beii")
+skeleton = NodePath("../..")

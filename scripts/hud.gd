@@ -70,3 +70,7 @@ func _on_play_again_button_pressed() -> void:
 	level_complete.visible = false
 	coins_label.text = str(0)
 	get_tree().reload_current_scene()
+	
+#func showPlatformTimer(timeToShow : float) -> void:
+	#time_label.visible = true
+	#time_label.text = str(int(timeToShow))
