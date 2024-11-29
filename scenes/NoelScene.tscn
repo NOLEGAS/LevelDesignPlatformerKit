@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://lgiuakdfais5"]
+[gd_scene load_steps=40 format=3 uid="uid://lgiuakdfais5"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6ehmu"]
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="1_sywyl"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="24_ifghr"]
 [ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="25_y0fq5"]
 [ext_resource type="PackedScene" uid="uid://drvjjkxdr01hn" path="res://objects/platformToggle.tscn" id="27_tf6da"]
+[ext_resource type="PackedScene" uid="uid://ytqajrdi7fqj" path="res://objects/trampoline.tscn" id="28_tkrdm"]
+[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="29_nn86p"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -177,9 +179,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 28)
 
 [node name="platform-falling" parent="World" instance=ExtResource("15_lq6tn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 31)
-
-[node name="platform-grass-large-round2" parent="World" instance=ExtResource("16_8a7db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 36)
 
 [node name="moving_object_path3" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
 curve = SubResource("Curve3D_xkxao")
@@ -389,6 +388,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6339, 0, 75.3017)
 [node name="spike-block-wide3" parent="World" instance=ExtResource("25_y0fq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.3706, 0, 79.1591)
 
+[node name="trampoline" parent="World" instance=ExtResource("28_tkrdm")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9, 12.1, 80)
+trampoline_strength = 15.0
+
+[node name="platform-falling8" parent="World" instance=ExtResource("29_nn86p")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.057, 15, 76.57)
+
+[node name="platform-falling10" parent="World" instance=ExtResource("29_nn86p")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10.057, 15, 74.838)
+
+[node name="platform-falling11" parent="World" instance=ExtResource("29_nn86p")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11.057, 15, 73.1059)
+
+[node name="platform-falling12" parent="World" instance=ExtResource("29_nn86p")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -12.057, 15, 71.3739)
+
+[node name="platform-large6" parent="World" instance=ExtResource("5_qprvo")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 15.5, 66.157)
+
+[node name="platform-large7" parent="World" instance=ExtResource("5_qprvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 36)
+
+[node name="platform-large8" parent="World" instance=ExtResource("5_qprvo")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -9, 11.5, 80)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
@@ -504,6 +528,10 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="trampoline" parent="." instance=ExtResource("28_tkrdm")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 16.1, 66.157)
+trampoline_strength = 15.0
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

@@ -17,7 +17,7 @@ func receive_input(state_on) -> void:
 
 func _process(_delta: float) -> void:
 	#hud.showPlatformTimer(timer.time_left)
-	if((timerTrigger) and (timer.time_left <= 3) and (not timerSoundPlayed)):
+	if((timerTrigger) and (timer.time_left <= 3) and (not timerSoundPlayed) and seeAndHear):
 		audio_stream_player.play()
 		timerSoundPlayed = true
 		Input.start_joy_vibration(0, 0.5, 0.5, 0.2)
