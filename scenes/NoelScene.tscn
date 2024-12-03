@@ -50,7 +50,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_xkxao"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 2, 40, 0, 0, 0, 0, 0, 0, 0, 2, 50),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 2, 50, 0, 0, 0, 0, 0, 0, 0, 2, 40),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -188,7 +188,7 @@ is_on_from_start = false
 ping_pong = true
 
 [node name="platform-moving3" parent="World" instance=ExtResource("4_fguj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 50)
 
 [node name="button2" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 36)
@@ -205,9 +205,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 58)
 
 [node name="checkpoint2" parent="World" instance=ExtResource("12_guwwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 58)
-
-[node name="coin3" parent="World" instance=ExtResource("17_553xf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4.5, 69)
 
 [node name="platform-falling3" parent="World" instance=ExtResource("15_lq6tn")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7, 2.5, 61)
@@ -326,9 +323,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.779, 9, 59.23)
 
 [node name="Cylinder" parent="World" instance=ExtResource("22_8n5f3")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 70)
-
-[node name="coin4" parent="World" instance=ExtResource("17_553xf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533, 6, 87.535)
 
 [node name="checkpoint4" parent="World" instance=ExtResource("12_guwwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 83)

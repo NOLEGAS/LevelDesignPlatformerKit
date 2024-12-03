@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://c8up71en5djgm"]
+[gd_scene load_steps=13 format=4 uid="uid://c8up71en5djgm"]
 
 [ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_gkggt"]
 [ext_resource type="Script" path="res://scripts/platform_falling.gd" id="2_6ganw"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="3_uuuje"]
+[ext_resource type="PackedScene" uid="uid://dqe83pil81wbx" path="res://objects/dither_obstacle.tscn" id="4_ktlm6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t551e"]
 size = Vector3(2, 0.1, 2)
@@ -122,5 +123,7 @@ mesh = SubResource("ArrayMesh_6gl6g")
 libraries = {
 "": SubResource("AnimationLibrary_mmy7m")
 }
+
+[node name="DitherObstacle" parent="." index="4" instance=ExtResource("4_ktlm6")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
