@@ -401,6 +401,19 @@ transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 0.6, -1.5, 1.31231, 13)
 [node name="WallDoor2" parent="World" instance=ExtResource("23_o7c8q")]
 transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 0.6, 1.5, 1.31231, 13)
 
+[node name="trampoline2" parent="World" instance=ExtResource("28_tkrdm")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 16.1, 66.157)
+trampoline_strength = 15.0
+
+[node name="platform-falling8" parent="World" instance=ExtResource("15_lq6tn")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.057, 15, 76.57)
+
+[node name="platform-falling10" parent="World" instance=ExtResource("15_lq6tn")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10.057, 15, 74.838)
+
+[node name="platform-falling11" parent="World" instance=ExtResource("15_lq6tn")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11.057, 15, 73.1059)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
@@ -516,19 +529,6 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="trampoline" parent="." instance=ExtResource("28_tkrdm")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 16.1, 66.157)
-trampoline_strength = 15.0
-
-[node name="platform-falling" parent="." instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.057, 15, 76.57)
-
-[node name="platform-falling2" parent="." instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10.057, 15, 74.838)
-
-[node name="platform-falling3" parent="." instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11.057, 15, 73.1059)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

@@ -12,7 +12,7 @@ func _ready() -> void:
 	if isGreen:
 		mesh.set_surface_override_material(0,colorGreen)
 		#Green platforms start turned on
-		visible = false
+		mesh.transparency = 0.5
 		collision.disabled = true
 	else:
 		mesh.set_surface_override_material(0,colorRed)
@@ -20,9 +20,9 @@ func _ready() -> void:
 
 func toggleState(isGreenOn : bool) -> void:
 	if((isGreen and isGreenOn) or (not isGreen and not isGreenOn)):
-		visible = true
+		mesh.transparency = 0
 		collision.set_deferred("disabled", false)
 		
 	else:
-		visible = false
+		mesh.transparency = 0.5
 		collision.set_deferred("disabled", true)
