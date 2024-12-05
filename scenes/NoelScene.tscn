@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://lgiuakdfais5"]
+[gd_scene load_steps=45 format=3 uid="uid://lgiuakdfais5"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6ehmu"]
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="1_sywyl"]
@@ -60,21 +60,21 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_xcta8"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.4142, 5.5, 76.5858, 0, 0, 0, 0, 0, 0, -5.05025, 5.5, 82.9497),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -10.7071, 5.5, 75.8787, 0, 0, 0, 0, 0, 0, -4.34315, 5.5, 82.2426),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_3ofea"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.539, 11.5, 67.491, 0, 0, 0, 0, 0, 0, -11.539, 11.5, 76.491),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.422, 11.5, 72.598, 0, 0, 0, 0, 0, 0, -7.922, 11.5, 80.3922),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_vgvtc"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.539, 11.5, 76.491, 0, 0, 0, 0, 0, 0, -13.539, 11.5, 67.491),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.65405, 11.5, 81.3922, 0, 0, 0, 0, 0, 0, -14.1541, 11.5, 73.598),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -82,6 +82,13 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_07aky"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 15, 0, 11, 0, 0, 0, 0, 0, 0, 11, 0, 11),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_4ggtn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.1213, 5.5, 77.2929, 0, 0, 0, 0, 0, 0, -5.75736, 5.5, 83.6569),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -260,7 +267,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="spike-block-wide" parent="World" instance=ExtResource("25_y0fq5")]
-transform = Transform3D(1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, -14.6641, 7.10589, 81.0938)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -14.6641, 7.10589, 81.0938)
 
 [node name="platform-grass-large-round4" parent="World" instance=ExtResource("16_8a7db")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 83)
@@ -365,10 +372,10 @@ isGreen = true
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5, 10, 59)
 
 [node name="platform-large4" parent="World" instance=ExtResource("5_qprvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5391, 11, 69.4905)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -12.2877, 11, 74.8301)
 
 [node name="platform-large5" parent="World" instance=ExtResource("5_qprvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5391, 11, 74.4905)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.78769, 11, 79.1602)
 
 [node name="moving_object_path5" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
 curve = SubResource("Curve3D_3ofea")
@@ -383,23 +390,23 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="spike-block-wide2" parent="World" instance=ExtResource("25_y0fq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6339, 0, 75.3017)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -27.6339, 0, 75.3017)
 
 [node name="spike-block-wide3" parent="World" instance=ExtResource("25_y0fq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.3706, 0, 79.1591)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -29.3706, 0, 79.1591)
 
 [node name="trampoline" parent="World" instance=ExtResource("28_tkrdm")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9, 12.1, 80)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -3.96799, 12.1, 82.162)
 trampoline_strength = 15.0
 
 [node name="platform-large6" parent="World" instance=ExtResource("5_qprvo")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 15.5, 66.157)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.9434, 15.5, 71.6583)
 
 [node name="platform-large7" parent="World" instance=ExtResource("5_qprvo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 36)
 
 [node name="platform-large8" parent="World" instance=ExtResource("5_qprvo")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -9, 11.5, 80)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -3.96799, 11.5, 82.162)
 
 [node name="WallDoor" parent="World" instance=ExtResource("23_o7c8q")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.6, -1.5, 1.5, 13)
@@ -408,17 +415,17 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.6, -1.5, 1.5, 13)
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.6, 1.5, 1.5, 13)
 
 [node name="trampoline2" parent="World" instance=ExtResource("28_tkrdm")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 16.1, 66.157)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.9434, 16.1, 71.6583)
 trampoline_strength = 15.0
 
 [node name="platform-falling8" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.057, 15, 76.57)
+transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, -6.01712, 15, 79.576)
 
 [node name="platform-falling10" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10.057, 15, 74.838)
+transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, -7.43133, 15, 78.1618)
 
 [node name="platform-falling11" parent="World" instance=ExtResource("15_lq6tn")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11.057, 15, 73.1059)
+transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, -8.84555, 15, 76.7476)
 
 [node name="PlatformToggleController" parent="World" instance=ExtResource("4_w526i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 70)
@@ -438,6 +445,9 @@ transform = Transform3D(1.7354, -1.04213, 1.96916, 2.03388, 1.75986, -0.861065, 
 
 [node name="cloud2" parent="World" instance=ExtResource("30_qcua5")]
 transform = Transform3D(1.31757, -0.791225, 1.49505, 1.54419, 1.33615, -0.653751, -0.690426, 1.47847, 1.39092, 9.88011, 14, 49.8413)
+
+[node name="cloud11" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.614507, -0.369022, 0.697283, 0.720201, 0.623172, -0.304905, -0.32201, 0.68955, 0.648714, 11.3752, 13.3462, 51.2322)
 
 [node name="cloud3" parent="World" instance=ExtResource("30_qcua5")]
 transform = Transform3D(6.47109, -3.886, 7.34276, 7.58411, 6.56233, -3.21081, -3.39094, 7.26134, 6.83131, -24.4134, 5, 41.1991)
@@ -463,8 +473,38 @@ transform = Transform3D(2.78946, -1.99013, 0.416931, 0.58379, 1.46187, 3.07208, 
 [node name="cloud10" parent="World" instance=ExtResource("30_qcua5")]
 transform = Transform3D(0.383015, -6.55021, -3.77695, 5.06624, -2.585, 4.99683, -5.61283, -2.78025, 4.25249, 28.5781, 9.96017, 77.0206)
 
+[node name="cloud12" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.0723451, -1.23722, -0.713401, 0.956927, -0.488263, 0.943817, -1.06017, -0.525142, 0.803224, 25.863, 13.7293, 67.8448)
+
+[node name="flowers-tall2" parent="World" instance=ExtResource("31_twt4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75699, 0.499999, 11.4419)
+
+[node name="flowers" parent="World" instance=ExtResource("32_s1cy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89169, 2.5, 57.0591)
+
+[node name="flowers-tall3" parent="World" instance=ExtResource("31_twt4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.905341, 6, 81.4524)
+
+[node name="flowers2" parent="World" instance=ExtResource("32_s1cy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09166, 9, 58.3328)
+
+[node name="platform-grass-large-round2" parent="World" instance=ExtResource("16_8a7db")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 11, 68)
+
+[node name="checkpoint5" parent="World" instance=ExtResource("12_guwwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 11.5, 68)
+
+[node name="moving_object_path8" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
+curve = SubResource("Curve3D_4ggtn")
+object_to_move = NodePath("../spike-block-wide4")
+movement_speed = 2.0
+ping_pong = true
+
+[node name="spike-block-wide4" parent="World" instance=ExtResource("25_y0fq5")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -18.6107, 7, 94.364)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, -2.29623)
 shadow_enabled = true
 shadow_opacity = 0.75
 
@@ -578,18 +618,6 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="flowers-tall2" parent="." instance=ExtResource("31_twt4g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75699, 0.499999, 11.4419)
-
-[node name="flowers" parent="." instance=ExtResource("32_s1cy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89169, 2.5, 57.0591)
-
-[node name="flowers-tall3" parent="." instance=ExtResource("31_twt4g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.905341, 6, 81.4524)
-
-[node name="flowers2" parent="." instance=ExtResource("32_s1cy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09166, 9, 58.3328)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
