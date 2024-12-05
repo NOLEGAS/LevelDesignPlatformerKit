@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://lgiuakdfais5"]
+[gd_scene load_steps=44 format=3 uid="uid://lgiuakdfais5"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6ehmu"]
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="1_sywyl"]
@@ -29,6 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="25_y0fq5"]
 [ext_resource type="PackedScene" uid="uid://drvjjkxdr01hn" path="res://objects/platformToggle.tscn" id="27_tf6da"]
 [ext_resource type="PackedScene" uid="uid://ytqajrdi7fqj" path="res://objects/trampoline.tscn" id="28_tkrdm"]
+[ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="30_qcua5"]
+[ext_resource type="PackedScene" uid="uid://bjf7nnqb2vgjd" path="res://models/props/flowers-tall.glb" id="31_twt4g"]
+[ext_resource type="PackedScene" uid="uid://crjxc823ldoc3" path="res://models/props/flowers.glb" id="32_s1cy4"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -430,6 +433,36 @@ ping_pong = true
 [node name="platform-moving4" parent="World" instance=ExtResource("4_fguj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 11)
 
+[node name="cloud" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(1.7354, -1.04213, 1.96916, 2.03388, 1.75986, -0.861065, -0.90937, 1.94732, 1.832, 5.88011, 0, 20.8413)
+
+[node name="cloud2" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(1.31757, -0.791225, 1.49505, 1.54419, 1.33615, -0.653751, -0.690426, 1.47847, 1.39092, 9.88011, 14, 49.8413)
+
+[node name="cloud3" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(6.47109, -3.886, 7.34276, 7.58411, 6.56233, -3.21081, -3.39094, 7.26134, 6.83131, -24.4134, 5, 41.1991)
+
+[node name="cloud4" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(1.89002, -2.56357, -0.282843, -1.22322, -0.582271, -2.89634, 2.2706, 1.8202, -1.32488, -14.4134, 5, 41.1991)
+
+[node name="cloud5" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.257226, -0.348896, -0.0384942, -0.166477, -0.0792456, -0.394184, 0.309023, 0.247725, -0.180312, -14.4134, 5, 46.1991)
+
+[node name="cloud6" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.0810625, -0.416963, 0.0945859, 0.244198, -0.033872, -0.358602, 0.350958, 0.119876, 0.22767, -14.4134, 5, 44.1991)
+
+[node name="cloud7" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.264151, -0.326416, -0.114245, -0.338961, -0.215856, -0.166993, 0.0685903, 0.190352, -0.385275, -13.4134, 5, 45.1991)
+
+[node name="cloud8" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(4.70282, 0.339515, 1.6638, -1.41699, 3.48432, 3.29418, -0.935758, -3.5699, 3.37345, -14.5095, 0, 93.4381)
+
+[node name="cloud9" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(2.78946, -1.99013, 0.416931, 0.58379, 1.46187, 3.07208, -1.94772, -2.41203, 1.51791, 5.57805, 9.96017, 92.0206)
+
+[node name="cloud10" parent="World" instance=ExtResource("30_qcua5")]
+transform = Transform3D(0.383015, -6.55021, -3.77695, 5.06624, -2.585, 4.99683, -5.61283, -2.78025, 4.25249, 28.5781, 9.96017, 77.0206)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
@@ -545,6 +578,18 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="flowers-tall2" parent="." instance=ExtResource("31_twt4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75699, 0.499999, 11.4419)
+
+[node name="flowers" parent="." instance=ExtResource("32_s1cy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89169, 2.5, 57.0591)
+
+[node name="flowers-tall3" parent="." instance=ExtResource("31_twt4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.905341, 6, 81.4524)
+
+[node name="flowers2" parent="." instance=ExtResource("32_s1cy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09166, 9, 58.3328)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
