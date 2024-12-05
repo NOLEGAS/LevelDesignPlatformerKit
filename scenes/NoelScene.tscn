@@ -149,7 +149,7 @@ is_on_from_start = false
 ping_pong = true
 
 [node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 11)
 target = NodePath("../moving_object_path2")
 
 [node name="coin2" parent="World" instance=ExtResource("17_553xf")]
@@ -191,7 +191,7 @@ ping_pong = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 50)
 
 [node name="button2" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 36)
 target = NodePath("../moving_object_path3")
 
 [node name="platform-falling2" parent="World" instance=ExtResource("15_lq6tn")]
