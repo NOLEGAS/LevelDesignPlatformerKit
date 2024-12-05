@@ -1,5 +1,5 @@
 extends Node3D
-@export var target : Node3D
+@export var targets : Array [Node3D]
 @export var pressed_by_default : bool
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var button_state : bool = false
@@ -10,9 +10,10 @@ func _ready() -> void:
 	if pressed_by_default:
 		button_state = true
 		animation_player.play("toggle-on",-1,10.0)
-	
-		if target and target.has_method("receive_input"):
-			target.receive_input(button_state)
+		if targets.size() > 0 :
+			for _target in targets :
+				if _target.has_method("receive_input"):
+					_target.receive_input(button_state)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -29,5 +30,7 @@ func _on_button_area_3d_area_entered(_area: Area3D) -> void:
 				button_state = true
 				animation_player.play("toggle-on")
 			
-			if target and target.has_method("receive_input"):
-				target.receive_input(button_state)
+			if targets.size() > 0 :
+				for _target in targets :
+					if _target.has_method("receive_input"):
+						_target.receive_input(button_state)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://lgiuakdfais5"]
+[gd_scene load_steps=41 format=3 uid="uid://lgiuakdfais5"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6ehmu"]
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="1_sywyl"]
@@ -43,7 +43,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_bfpv7"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4, 0, 11, 0, 0, 0, 0, 0, 0, 6, 0, 11),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4, 0, 11, 0, 0, 0, 0, 0, 0, 8, 0, 11),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -72,6 +72,13 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_vgvtc"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.539, 11.5, 76.491, 0, 0, 0, 0, 0, 0, -13.539, 11.5, 67.491),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_07aky"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 15, 0, 11, 0, 0, 0, 0, 0, 0, 11, 0, 11),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -115,10 +122,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 current = true
 fov = 40.0
 
-[node name="PlatformToggleController" parent="." instance=ExtResource("4_w526i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 70)
-timerTrigger = true
-
 [node name="World" type="Node3D" parent="."]
 
 [node name="moving_object_path" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
@@ -148,12 +151,12 @@ object_to_move = NodePath("../platform-moving2")
 is_on_from_start = false
 ping_pong = true
 
-[node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
+[node name="button" parent="World" node_paths=PackedStringArray("targets") instance=ExtResource("9_8raxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 11)
-target = NodePath("../moving_object_path2")
+targets = [NodePath("../moving_object_path2"), NodePath("../moving_object_path7")]
 
 [node name="coin2" parent="World" instance=ExtResource("17_553xf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, 11)
 
 [node name="door" parent="World" instance=ExtResource("2_11cpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 13)
@@ -190,9 +193,9 @@ ping_pong = true
 [node name="platform-moving3" parent="World" instance=ExtResource("4_fguj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 50)
 
-[node name="button2" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("9_8raxu")]
+[node name="button2" parent="World" node_paths=PackedStringArray("targets") instance=ExtResource("9_8raxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 36)
-target = NodePath("../moving_object_path3")
+targets = [NodePath("../moving_object_path3")]
 
 [node name="platform-falling2" parent="World" instance=ExtResource("15_lq6tn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 53)
@@ -396,10 +399,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 36)
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -9, 11.5, 80)
 
 [node name="WallDoor" parent="World" instance=ExtResource("23_o7c8q")]
-transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 0.6, -1.5, 1.31231, 13)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.6, -1.5, 1.5, 13)
 
 [node name="WallDoor2" parent="World" instance=ExtResource("23_o7c8q")]
-transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 0.6, 1.5, 1.31231, 13)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.6, 1.5, 1.5, 13)
 
 [node name="trampoline2" parent="World" instance=ExtResource("28_tkrdm")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -12.487, 16.1, 66.157)
@@ -413,6 +416,19 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10.057, 1
 
 [node name="platform-falling11" parent="World" instance=ExtResource("15_lq6tn")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11.057, 15, 73.1059)
+
+[node name="PlatformToggleController" parent="World" instance=ExtResource("4_w526i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 70)
+timerTrigger = true
+
+[node name="moving_object_path7" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("1_sywyl")]
+curve = SubResource("Curve3D_07aky")
+object_to_move = NodePath("../platform-moving4")
+is_on_from_start = false
+ping_pong = true
+
+[node name="platform-moving4" parent="World" instance=ExtResource("4_fguj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 11)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
